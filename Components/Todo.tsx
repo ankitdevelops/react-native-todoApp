@@ -6,7 +6,9 @@ const Todo = ({todo, deleteTodo}) => {
       <View style={styles.todoContainer}>
         <Text style={styles.todoText}>{todo.todo}</Text>
         {/* <BouncyCheckbox disableBuiltInState fillColor="#23C4ED" /> */}
-        <TouchableOpacity onPress={() => deleteTodo(todo.id)}>
+        <TouchableOpacity
+          onPress={() => deleteTodo(todo.id)}
+          style={styles.deleteBtn}>
           <Text style={styles.buttonText}>X</Text>
         </TouchableOpacity>
       </View>
@@ -35,5 +37,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 700,
     color: 'red',
+  },
+  deleteBtn: {
+    backgroundColor: '#51E1ED',
+    paddingVertical: 2,
+    paddingHorizontal: 10,
+    borderRadius: 5,
   },
 });
